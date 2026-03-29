@@ -6,4 +6,6 @@ coverage/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-cookies.json
+cookies_x.json
+check_data.json
+localStorage_x.json
