@@ -52,15 +52,12 @@ export async function fetchHrefs_x(d) {
             } catch (error) {
                 console.error("Error restoring localStorage:", error);
             }
-            await new Promise(resolve => setTimeout(resolve, 3000));
-        } else {
-            await new Promise(resolve => setTimeout(resolve, 6000));
         }
-
+        await page.goto(url, { waitUntil: "load", timeout: 60000 });
         await page.evaluate(() => {
             window.scrollBy(0, 3000);
         });
-        await new Promise(resolve => setTimeout(resolve, 3000));
+        await page.goto(url, { waitUntil: "load", timeout: 60000 });
 
         //取得資料
         const hrefs = await page.$$eval(
