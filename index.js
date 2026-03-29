@@ -5,9 +5,7 @@ dotenv.config();
 import { login, sendMessage } from "./bot.js";
 import { fetchHrefs_x } from "./x_Crawler.js";
 
-// 全域已發送的鏈接列表
 let globalSentLinks = [];
-const globalCheckFile = `check_data.json`;
 
 async function main() {
     await login();
@@ -16,6 +14,7 @@ async function main() {
 }
 
 const auto_Message = async (targets) => {
+    const globalCheckFile = `check_data.json`;
     // 載入全域已發送鏈接列表
     if (fs.existsSync(globalCheckFile)) {
         try {
