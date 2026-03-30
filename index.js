@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import { login, sendMessage } from "./bot.js";
-import { fetchHrefs_xBatch } from "./x_Crawler.js";
+import { fetchHrefs_xBatch } from "./crawler.js";
 
 let globalSentLinks = [];
 const globalCheckFile = `check_data.json`;
